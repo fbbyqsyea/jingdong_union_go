@@ -66,7 +66,7 @@ func (app *App) JdUnionOpenGoodsPromotiongoodsinfoQuery(params map[string]interf
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

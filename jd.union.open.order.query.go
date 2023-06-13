@@ -88,7 +88,7 @@ func (app *App) JdUnionOpenOrderQuery(params map[string]interface{}) (result *Jd
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

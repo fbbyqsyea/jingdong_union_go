@@ -40,7 +40,7 @@ func (app *App) JdUnionOpenCouponGiftStop(params map[string]interface{}) (result
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

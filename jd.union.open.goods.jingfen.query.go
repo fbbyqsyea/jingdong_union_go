@@ -32,7 +32,7 @@ func (app *App) JdUnionOpenGoodsJingfenQuery(params map[string]interface{}) (res
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

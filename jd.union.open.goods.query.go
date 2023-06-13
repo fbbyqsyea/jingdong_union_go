@@ -98,7 +98,8 @@ type Coupon struct {
 }
 
 type ImageInfo struct {
-	ImageList []ImageList `json:"imageList"`
+	ImageList  []ImageList `json:"imageList"`
+	WhiteImage string      `json:"whiteImage"`
 }
 
 type ImageList struct {
@@ -216,7 +217,7 @@ func (app *App) JdUnionOpenGoodsQuery(params map[string]interface{}) (result *Jd
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

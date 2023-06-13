@@ -44,7 +44,7 @@ func (app *App) JdUnionOpenPromotionCommonGet(params map[string]interface{}) (re
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

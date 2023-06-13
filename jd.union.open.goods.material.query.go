@@ -33,7 +33,7 @@ func (app *App) JdUnionOpenGoodsMaterialQuery(params map[string]interface{}) (re
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

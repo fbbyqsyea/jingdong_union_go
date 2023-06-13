@@ -47,7 +47,7 @@ func (app *App) JdUnionOpenCategoryGoodsGet(params map[string]interface{}) (resu
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }

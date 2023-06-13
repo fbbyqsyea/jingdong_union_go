@@ -45,7 +45,7 @@ func (app *App) JdUnionOpenPromotionBysubunionidGet(params map[string]interface{
 			return
 		}
 	} else {
-		err = errors.New("result is null")
+		err = errors.New("result is null")
 	}
 	return
 }
