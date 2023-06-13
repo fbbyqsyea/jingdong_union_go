@@ -63,7 +63,7 @@ go test -v *.go
     package main 
 
     import (
-        "github.com/irebit/jingdong_union_go"
+        "github.com/fbbyqsyea/jingdong_union_go"
         "log"
     )
 

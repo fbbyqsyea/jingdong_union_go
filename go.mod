@@ -1,4 +1,4 @@
-module github.com/irebit/jingdong_union_go
+module github.com/fbbyqsyea/jingdong_union_go
 
 go 1.16
 
