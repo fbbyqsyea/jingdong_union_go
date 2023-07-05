@@ -78,5 +78,4 @@ go test -v *.go
         "grade":    0,
     })
 
-    log.Println(res, err)
 ```

@@ -31,7 +31,6 @@ func (app *App) JdUnionOpenPromotionCommonGet(params map[string]interface{}) (re
 	body, err := app.Request("jd.union.open.promotion.common.get", map[string]interface{}{"promotionCodeReq": params})
 	resp := &JdUnionOpenPromotionCommonGetTopLevel{}
 	if err != nil {
-		log.Println(string(body))
 		return
 	}
 	log.Printf("%v", string(body))

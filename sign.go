@@ -22,7 +22,6 @@ func GetSign(clientSecret string, p map[string]interface{}) string {
 		signStr += key + GetString(p[key])
 	}
 	signStr += clientSecret
-	// log.Println(signStr, "=", md5Hash(signStr))
 	return md5Hash(signStr)
 }
 

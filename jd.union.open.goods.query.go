@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 
 	"github.com/shopspring/decimal"
 )
@@ -182,7 +181,7 @@ type PromotionLabelInfo struct {
 }
 
 type SecondPriceInfo struct {
-	SecondPriceType int             `json:"secondPriceType"` //双价格类型：18新人价
+	SecondPriceType interface{}     `json:"secondPriceType"` //双价格类型：18新人价
 	SecondPrice     decimal.Decimal `json:"secondPrice"`     //价格
 }
 type ShopInfo struct {
@@ -194,7 +193,7 @@ type ShopInfo struct {
 	CommentFactorScoreRankGrade   string          `json:"commentFactorScoreRankGrade"`   // 用户评价评级（仅pop店铺有值）
 	LogisticsLvyueScore           string          `json:"logisticsLvyueScore"`           // 物流履约评分（仅pop店铺有值）
 	LogisticsFactorScoreRankGrade string          `json:"logisticsFactorScoreRankGrade"` // 物流履约评级（仅pop店铺有值）
-	AfterServiceScore             string          `json:"logisticsFactorScoreRankGrade"` // 售后服务评分（仅pop店铺有值）
+	AfterServiceScore             string          `json:"afterServiceScore"`             // 售后服务评分（仅pop店铺有值）
 	AfsFactorScoreRankGrade       string          `json:"afsFactorScoreRankGrade"`       // 售后服务评级（仅pop店铺有值）
 	ScoreRankRate                 string          `json:"scoreRankRate"`                 // 店铺风向标（仅pop店铺有值）
 }
@@ -204,10 +203,8 @@ func (app *App) JdUnionOpenGoodsQuery(params map[string]interface{}) (result *Jd
 	body, err := app.Request("jd.union.open.goods.query", map[string]interface{}{"goodsReqDTO": params})
 	resp := &JdUnionOpenGoodsQueryResponseTopLevel{}
 	if err != nil {
-		log.Println(string(body))
 		return
 	}
-
 	if err = json.Unmarshal(body, resp); err != nil {
 		return
 	}

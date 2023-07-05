@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenPromotionBysubunionidGetTopLevel struct {
@@ -32,7 +31,6 @@ func (app *App) JdUnionOpenPromotionBysubunionidGet(params map[string]interface{
 	body, err := app.Request("jd.union.open.promotion.bysubunionid.get", map[string]interface{}{"promotionCodeReq": params})
 	resp := &JdUnionOpenPromotionBysubunionidGetTopLevel{}
 	if err != nil {
-		log.Println(string(body))
 		return
 	}
 
