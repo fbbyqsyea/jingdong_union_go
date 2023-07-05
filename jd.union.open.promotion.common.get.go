@@ -3,7 +3,6 @@ package jingdong_union_go
 import (
 	"encoding/json"
 	"errors"
-	"log"
 )
 
 type JdUnionOpenPromotionCommonGetTopLevel struct {
@@ -33,7 +32,6 @@ func (app *App) JdUnionOpenPromotionCommonGet(params map[string]interface{}) (re
 	if err != nil {
 		return
 	}
-	log.Printf("%v", string(body))
 	if err = json.Unmarshal(body, resp); err != nil {
 		return
 	}
