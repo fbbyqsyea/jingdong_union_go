@@ -14,11 +14,56 @@ type JdUnionOpenGoodsBigfieldQueryResponse struct {
 	Code   string `json:"code"`
 }
 
+type VideoBigFieldInfo struct {
+	ProductFeatures     string `json:"productFeatures"`
+	Image               string `json:"image"`
+	MaterialDescription string `json:"material_Description"`
+	Comments            string `json:"comments"`
+	BoxContents         string `json:"box_Contents"`
+	EditerDesc          string `json:"editerDesc"`
+	ContentDesc         string `json:"contentDesc"`
+	Manual              string `json:"manual"`
+	Catalogue           string `json:"catalogue"`
+}
+
+type BaseBigFieldInfo struct {
+	Wdis       string `json:"wdis"`
+	WareQD     string `json:"wareQD"`
+	PropGroups string `json:"propGroups"`
+	PropCode   string `json:"propCode"`
+}
+type BookBigFieldInfo struct {
+	ProductFeatures string `json:"productFeatures"`
+	Image           string `json:"image"`
+	Comments        string `json:"comments"`
+	RelatedProducts string `json:"relatedProducts"`
+	AuthorDesc      string `json:"authorDesc"`
+	BookAbstract    string `json:"bookAbstract"`
+	EditerDesc      string `json:"editerDesc"`
+	ContentDesc     string `json:"contentDesc"`
+	Catalogue       string `json:"catalogue"`
+	Introduction    string `json:"introduction"`
+}
 type JdUnionOpenGoodsBigfieldQueryResult struct {
-	Code      int64         `json:"code"`
-	Data      []interface{} `json:"data"`
-	Message   string        `json:"message"`
-	RequestID string        `json:"requestId"`
+	Code    int                 `json:"code"`
+	Data    []BigFieldGoodsResp `json:"data"`
+	Message string              `json:"message"`
+}
+
+type BigFieldGoodsResp struct {
+	VideoBigFieldInfo VideoBigFieldInfo `json:"videoBigFieldInfo"`
+	Owner             string            `json:"owner"`
+	MainSkuId         string            `json:"mainSkuId"`
+	ProductId         string            `json:"productId"`
+	SkuStatus         string            `json:"skuStatus"`
+	ImageInfo         ImageInfo         `json:"imageInfo"`
+	CategoryInfo      CategoryInfo      `json:"categoryInfo"`
+	SkuName           string            `json:"skuName"`
+	ItemID            string            `json:"itemId"`
+	BaseBigFieldInfo  BaseBigFieldInfo  `json:"baseBigFieldInfo"`
+	BookBigFieldInfo  BookBigFieldInfo  `json:"bookBigFieldInfo"`
+	DetailImages      string            `json:"detailImages"`
+	SkuID             string            `json:"skuId"`
 }
 
 func (app *App) JdUnionOpenGoodsBigfieldQuery(params map[string]interface{}) (result *JdUnionOpenGoodsBigfieldQueryResult, err error) {
